@@ -820,7 +820,7 @@ const App = () => {
              
              {/* Match Point A Indicator */}
              {tool === 'match_points' && matchPointA && (
-                <div className="absolute w-0 h-0 z-[100] pointer-events-none" style={{ left: matchPointA.x, top: matchPointA.y }}>
+                <div className="absolute w-0 h-0 z-[100] pointer-events-none" style={{ left: `calc(50% + ${matchPointA.x}px)`, top: `calc(50% + ${matchPointA.y}px)` }}>
                   <div className="absolute -left-2 -top-2 w-4 h-4 border-2 border-red-500 rounded-full bg-red-500/30 animate-ping"></div>
                   <div className="absolute -left-2 -top-2 w-4 h-4 border-2 border-red-500 rounded-full bg-red-500/30"></div>
                   <div className="absolute -left-3 top-0 w-6 h-px bg-red-500"></div>
@@ -833,7 +833,7 @@ const App = () => {
              {layerB.anchorTarget && (
                <div 
                   className={`absolute z-[100] transform -translate-x-1/2 -translate-y-full cursor-pointer hover:scale-110 transition-transform ${tool === 'adjust_anchor' ? 'scale-125' : ''}`}
-                  style={{ left: layerB.anchorTarget.x, top: layerB.anchorTarget.y }}
+                  style={{ left: `calc(50% + ${layerB.anchorTarget.x}px)`, top: `calc(50% + ${layerB.anchorTarget.y}px)` }}
                   title="Kotwica obrotu (Chwyć aby przesunąć)"
                >
                  <span className="material-icons text-blue-600 text-3xl drop-shadow-md">push_pin</span>
